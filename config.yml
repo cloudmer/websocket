@@ -1,0 +1,2 @@
+certFile: /Users/cloud/wwwroot/golang/src/websocket/secret/server.crt
+addr: 0.0.0.0:10086

@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "TCJvj0EfbBS1xGzXXKuDlpI5yyQ=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "b648f206c26b1333ae0c90e91ab3e227859bd8d6",
+			"revisionTime": "2017-11-28T00:10:45Z"
+		},
+		{
+			"checksumSHA1": "fRgp9UZPllOlkPssv7frzQx4z9A=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "287cf08546ab5e7e37d55a84f7ed3fd1db036de5",
+			"revisionTime": "2017-11-16T09:02:43Z"
+		}
+	],
+	"rootPath": "websocket"
+}
