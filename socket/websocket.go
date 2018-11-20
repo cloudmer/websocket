@@ -3,7 +3,6 @@ package socket
 import (
 	"net/http"
 	"github.com/gorilla/websocket"
-	"fmt"
 )
 
 var upgrader = websocket.Upgrader{
@@ -36,7 +35,6 @@ func Websocket(writer http.ResponseWriter, request *http.Request)  {
 		if data, err = conn.ReadMessage(); err != nil {
 			goto ERR
 		}
-		fmt.Println(string(data))
 		if err = conn.WriteMessage(data); err != nil {
 			goto ERR
 		}
