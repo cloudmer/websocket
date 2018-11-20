@@ -3,6 +3,7 @@ package socket
 import (
 	"net/http"
 	"github.com/gorilla/websocket"
+	"fmt"
 )
 
 var upgrader = websocket.Upgrader{
@@ -16,7 +17,7 @@ var upgrader = websocket.Upgrader{
 func Websocket(writer http.ResponseWriter, request *http.Request)  {
 	var (
 		wsConn *websocket.Conn
-		conn *Connection
+		conn *Connect
 		data []byte
 		err error
 	)
@@ -26,8 +27,8 @@ func Websocket(writer http.ResponseWriter, request *http.Request)  {
 		return
 	}
 
-	// 新的链接加入
-	if conn, err = initConnection(wsConn); err != nil {
+	// 新的连接加入
+	if conn, err = initConnect(wsConn); err != nil {
 		goto ERR
 	}
 
@@ -35,6 +36,7 @@ func Websocket(writer http.ResponseWriter, request *http.Request)  {
 		if data, err = conn.ReadMessage(); err != nil {
 			goto ERR
 		}
+		fmt.Println(string(data))
 		if err = conn.WriteMessage(data); err != nil {
 			goto ERR
 		}
